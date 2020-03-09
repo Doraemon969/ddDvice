@@ -1,5 +1,8 @@
 <!--index.wxml-->
 <view class="container">
+<text class="" selectable="false" space="false" decode="false">
+  test
+</text>
 
   <!-- 用户 openid -->
   <view class="userinfo">
