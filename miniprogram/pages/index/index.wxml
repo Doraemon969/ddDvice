@@ -3,8 +3,6 @@
 <text class="" selectable="false" space="false" decode="false">
   test
 </text>
-<map id="" class="2" longitude="119.37469482421875" latitude="31.512995857478696" scale="16" markers="" 
-  bindregionchange="" bindtap="" bindupdated="" ></map>
 
   <!-- 用户 openid -->
   <view class="userinfo">
