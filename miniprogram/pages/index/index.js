@@ -7,10 +7,13 @@ Page({
     userInfo: {},
     logged: false,
     takeSession: false,
-    requestResult: ''
+    requestResult: '',
+    name: "卞瑞江",
+    age: 24
   },
 
   onLoad: function() {
+    console.log("载入成功！")
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -116,5 +119,12 @@ Page({
       }
     })
   },
+
+  click: function () {
+    this.setData({
+      name: "川普",
+      age: 50
+    })
+  }
 
 })

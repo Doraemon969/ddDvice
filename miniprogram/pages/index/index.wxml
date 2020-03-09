@@ -1,8 +1,9 @@
 <!--index.wxml-->
 <view class="container">
 <text class="" selectable="false" space="false" decode="false">
-  test
+  姓名：{{name}} ， 年龄： {{age}}
 </text>
+<button class="btn" bindtap="click">来啊，点我啊！</button>
 
   <!-- 用户 openid -->
   <view class="userinfo">

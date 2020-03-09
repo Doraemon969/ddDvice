@@ -151,3 +151,9 @@ page {
   line-height: 36rpx;
   word-break: break-all;
 }
+
+/* 添加 */
+.btn{
+  border: 1px solid #f60;
+  background-color: pink;
+}
