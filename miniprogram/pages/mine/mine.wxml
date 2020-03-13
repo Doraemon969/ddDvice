@@ -1,2 +1,17 @@
 <!--miniprogram/pages/mine/mine.wxml-->
 <text>miniprogram/pages/mine/mine.wxml</text>
+<l-list l-class="list" title="购物车" />
+<l-list l-class="list" title="购物车" desc="查看我的购物车"  right-desc="right" />
+<l-list l-class="list" title="购物车" icon="cart" is-link="{{false}}" />
+<l-list l-class="list" title="消息" icon="notification" />
+
+<l-list l-class="list" title="购物车" icon="cart" tag-content="购物车" />
+<l-list l-class="list" title="购物车" icon="cart" tag-content="购物车" tag-color="#F4516c" />
+<l-list l-class="list" title="消息" icon="notification" tag-content="消息" tag-position="right" />
+<l-list l-class="list" tag-plain="{{true}}" title="消息" icon="notification" tag-content="消息" tagShape="circle" tag-position="right" />
+
+
+
+
+
+

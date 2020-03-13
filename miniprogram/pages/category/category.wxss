@@ -1,1 +1,9 @@
-/* miniprogram/pages/category/category.wxss */
+.search{
+    margin: 20rpx 0rpx 40rpx;
+}
+
+.category-content .img{
+    width: 140rpx;
+    height: 140rpx;
+}
+
