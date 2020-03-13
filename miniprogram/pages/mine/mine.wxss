@@ -1,1 +1,4 @@
 /* miniprogram/pages/mine/mine.wxss */
+.list{
+    padding:10rpx 50rpx;
+}

@@ -5,7 +5,20 @@ Page({
      * 页面的初始数据
      */
     data: {
+        testList:[
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText2"
+            }
+        ]
+    },
 
+    click: function (e) {
+        console.log(e.detail);
     },
 
     /**

@@ -20,11 +20,15 @@
     "window": {
         "backgroundColor": "#F6F6F6",
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "多多设备",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
+      "color": "#f6f6f6",
+      "selectedColor": "#333",
+      "backgroundColor": "#F57C14",
+      "borderStyle": "black",
         "list": [
             {
                 "pagePath": "pages/index/index",
