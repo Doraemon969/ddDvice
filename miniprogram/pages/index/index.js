@@ -1,12 +1,5 @@
 var app = getApp()
 Page({
-  onShareAppMessage() {
-    return {
-      title: 'swiper',
-      path: 'page/component/pages/swiper/swiper'
-    }
-  },
-
   data: {
     background: [
       '../../images/index-home-pic/banner1.jpg',
@@ -17,7 +10,48 @@ Page({
     vertical: false,
     autoplay: true,
     interval: 3000,
-    duration: 500
+    duration: 1000,
+    indexRecommend: [{
+        imgUrl: "../../images/index-home-pic/banner1.jpg",
+        description: "设备1厂家直销，便宜实惠又好用！赶紧来租吧！",
+        price: 0.01
+      },
+      {
+        imgUrl: "../../images/index-home-pic/banner1.jpg",
+        description: "设备2",
+        price: 0.01
+      },
+      {
+        imgUrl: "../../images/index-home-pic/banner1.jpg",
+        description: "设备3",
+        price: 0.01
+      },
+      {
+        imgUrl: "../../images/index-home-pic/banner1.jpg",
+        description: "设备4",
+        price: 0.01
+      },
+      {
+        imgUrl: "../../images/index-home-pic/banner1.jpg",
+        description: "设备5",
+        price: 0.01
+      },
+      {
+        imgUrl: "../../images/index-home-pic/banner1.jpg",
+        description: "设备6",
+        price: 0.01
+      },
+      {
+        imgUrl: "../../images/index-home-pic/banner1.jpg",
+        description: "设备7",
+        price: 0.01
+      },
+      {
+        imgUrl: "../../images/index-home-pic/banner1.jpg",
+        description: "设备8",
+        price: 0.01
+      },
+    ]
   },
 
   changeIndicatorDots() {
@@ -42,7 +76,15 @@ Page({
     this.setData({
       duration: e.detail.value
     })
-  }
+  },
+
+  onShareAppMessage() {
+    return {
+      title: 'swiper',
+      path: 'page/component/pages/swiper/swiper',
+    }
+  },
+
 })
 
 

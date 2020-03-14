@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "多多购物车",
+  "usingComponents": {
+    "l-slide-view": "./../../miniprogram_npm/lin-ui/slide-view",
+    "l-checkbox-group": "./../../miniprogram_npm/lin-ui/checkbox-group",
+    "l-checkbox": "./../../miniprogram_npm/lin-ui/checkbox"
+  }
 }

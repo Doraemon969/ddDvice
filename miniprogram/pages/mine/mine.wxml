@@ -1,17 +1,56 @@
-<!--miniprogram/pages/mine/mine.wxml-->
-<text>miniprogram/pages/mine/mine.wxml</text>
-<l-list l-class="list" title="购物车" />
-<l-list l-class="list" title="购物车" desc="查看我的购物车"  right-desc="right" />
-<l-list l-class="list" title="购物车" icon="cart" is-link="{{false}}" />
-<l-list l-class="list" title="消息" icon="notification" />
-
-<l-list l-class="list" title="购物车" icon="cart" tag-content="购物车" />
-<l-list l-class="list" title="购物车" icon="cart" tag-content="购物车" tag-color="#F4516c" />
-<l-list l-class="list" title="消息" icon="notification" tag-content="消息" tag-position="right" />
-<l-list l-class="list" tag-plain="{{true}}" title="消息" icon="notification" tag-content="消息" tagShape="circle" tag-position="right" />
-
-
-
-
-
-
+<!-- miniprogram/pages/mine/mine.wxml -->
+<!-- 头部卡片 -->
+<l-card l-class="my-card head" l-img-class="head-img" type="avatar" image="{{userInfo.imgUrl}}" title="{{userInfo.name}}" describe="{{userInfo.status}}">
+    <l-grid rowNum="2">
+        <l-grid-item l-grid-item-class="grid-item" key="one" slot="one">
+            <l-icon name="customer-service" style="margin:20rpx 0" />
+            <view class="text" style="font-weight=800">关于我们</view>
+        </l-grid-item>
+        <l-grid-item l-grid-item-class="grid-item" key="two" slot="two">
+            <view class="num" style="color:#f60;  margin: 18rpx 0 22rpx 0;">
+                {{userInfo.integral}}
+            </view>
+            <view class="text" style="font-weight=800">积分</view>
+        </l-grid-item>
+    </l-grid>
+</l-card>
+<!-- 订单卡片 -->
+<l-card l-class="my-card order" type="primary" plaintext="{{true}}" title="我的订单">
+    <view class="content">
+        <l-grid l-class="grid" row-num="4" row-num="5">
+            <l-grid-item wx:key="0" key="0" slot="0">
+                <text class="iconfont icon-daifukuan"></text>
+                <view class="text">待付款</view>
+            </l-grid-item>
+            <l-grid-item wx:key="1" key="1" slot="1">
+                <text class="iconfont icon-daifahuo"></text>
+                <view class="text">待发货</view>
+            </l-grid-item>
+            <l-grid-item wx:key="2" key="2" slot="2">
+                <text class="iconfont icon-daishouhuo"></text>
+                <view class="text">待收货</view>
+            </l-grid-item>
+            <l-grid-item wx:key="3" key="3" slot="3">
+                <text class="iconfont icon-yiwancheng"></text>
+                <view class="text">已完成</view>
+            </l-grid-item>
+            <l-grid-item wx:key="4" key="4" slot="4">
+                <text class="iconfont icon-quanbudingdan"></text>
+                <view class="text">全部订单</view>
+            </l-grid-item>
+        </l-grid>
+    </view>
+</l-card>
+<!-- 更多卡片 -->
+<l-card l-class="my-card more" type="primary" plaintext="{{true}}" title="更多功能">
+    <view class="content">
+        <l-list l-class="list" title="购物车" />
+        <l-list l-class="list" title="购物车" desc="查看我的购物车" right-desc="right" />
+        <l-list l-class="list" title="购物车" icon="cart" is-link="{{false}}" />
+        <l-list l-class="list" title="消息" icon="notification" />
+        <l-list l-class="list" title="购物车" icon="cart" tag-content="购物车" />
+        <l-list l-class="list" title="购物车" icon="cart" tag-content="购物车" tag-color="#F4516c" />
+        <l-list l-class="list" title="消息" icon="notification" tag-content="消息" tag-position="right" />
+        <l-list l-class="list" tag-plain="{{true}}" title="消息" icon="notification" tag-content="消息" tagShape="circle" tag-position="right" />
+    </view>
+</l-card>

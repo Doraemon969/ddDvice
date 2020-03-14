@@ -1,4 +1,30 @@
 /* miniprogram/pages/mine/mine.wxss */
-.list{
-    padding:10rpx 50rpx;
+.my-card{
+    margin-bottom: 50rpx !important;
+}
+
+.head{
+    background-color: rgba(0, 149, 224, .2) !important;
+    margin-top: 30rpx !important;
+}
+
+.head-img{
+    border: 1px solid #999;
+}
+
+.grid-item{
+    margin-top: 20rpx !important;
+}
+
+.order .grid .iconfont {
+    font-size: 80rpx;
+    color: #8982FE;
+}
+
+.order .grid .text {
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+.order .content {
+    margin-top: 20rpx;
 }

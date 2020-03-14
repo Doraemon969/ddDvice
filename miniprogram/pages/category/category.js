@@ -12,6 +12,58 @@ Page({
             },
             {
                 image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
+                text: "testText1"
+            },
+            {
+                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
                 text: "testText2"
             }
         ]

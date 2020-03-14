@@ -57,5 +57,16 @@
         "wx7369010583531728"
     ],
     "sitemapLocation": "sitemap.json",
-    "style": "v2"
+    "style": "v2",
+    "navigationBarTitleText": "多多分类",
+    "usingComponents": {
+        "l-icon": "./miniprogram_npm/lin-ui/icon",
+        "l-grid": "./miniprogram_npm/lin-ui/grid",
+        "l-grid-item": "./miniprogram_npm/lin-ui/grid-item",
+        "l-search-bar": "./miniprogram_npm/lin-ui/search-bar",
+        "l-tabs": "./miniprogram_npm/lin-ui/tabs",
+        "l-tabpanel": "./miniprogram_npm/lin-ui/tabpanel",
+        "l-list": "./miniprogram_npm/lin-ui/list",
+        "l-card": "./miniprogram_npm/lin-ui/card"
+    }
 }

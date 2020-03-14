@@ -1,2 +1,22 @@
-<!--miniprogram/pages/shopping-car/shopping-car.wxml-->
-<text>miniprogram/pages/shopping-car/shopping-car.wxml</text>
+<!-- 购物车模块 -->
+<l-checkbox-group l-class="checkbox-group" bind:linchange="onChangeTap">
+    <l-slide-view wx:for="{{shoppingCarInfo}}" wx:key="{{shoppingCarInfo}}" class="slide-item" height="200" width="750" slide-width="340" auto-close="{{true}}">
+        <view slot="left" class="left">
+            <l-checkbox l-class="checkbox-item" key="{{item.goodsId}}" selected-color="#0096e0">
+                <view class='left-con'>
+                    <image class="img" src="{{item.imgUrl}}"></image>
+                    <view class="goodsDes">
+                        <text class='left-title'>{{item.title}}</text>
+                        <text class='left-des'>{{item.description}}</text>
+                        <text class='left-rent'><text class="symbol">¥</text>{{item.rent}}</text>
+                    </view>
+                </view>
+            </l-checkbox>
+        </view>
+        <view slot="right" class="right">
+            <text class="right-text right-cllection">收藏</text>
+            <text class="right-text right-share">分享</text>
+            <text class="right-text right-delete">删除</text>
+        </view>
+    </l-slide-view>
+</l-checkbox-group>

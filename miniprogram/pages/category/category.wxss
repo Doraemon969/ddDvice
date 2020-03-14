@@ -7,3 +7,10 @@
     height: 140rpx;
 }
 
+.content-head {
+    height: 500rpx !important;
+}
+
+.content-box {
+    height: 986rpx !important;
+}
