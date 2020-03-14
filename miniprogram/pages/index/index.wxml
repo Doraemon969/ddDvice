@@ -11,8 +11,28 @@
         </block>
       </swiper>
     </view>
-    <view class="recommend">推荐</view>
-    <view class="recommend-content">
+
+    <l-card l-class="recommend" l-title-class="recommend-title" type="primary" plaintext="{{true}}" title="多多推荐">
+      <view class="content">
+        <l-grid l-class="grid">
+          <l-grid-item  l-grid-item-class="item" wx:for="{{indexRecommend}}"  wx:key="index" key="{{index}}" slot="{{index}}">
+            <image class="img" src="{{item.imgUrl}}"></image>
+            <view class="des">{{item.description}}</view>
+            <view class="rent">¥{{item.price}}</view>
+          </l-grid-item>
+        </l-grid>
+      </view>
+    </l-card>
+
+
+
+
+
+
+
+
+    <!-- <view class="recommend">推荐</view> -->
+    <!-- <view class="recommend-content">
       <view class="floor">
         <view class="item">
           <image class="img" src="../../images/index-home-pic/banner1.jpg"></image>
@@ -64,7 +84,7 @@
           <view class="rent">¥0.01</view>
         </view>
       </view>
-    </view>
+    </view> -->
   </view>
   <!-- 用户 openid -->
   <view class="userinfo">

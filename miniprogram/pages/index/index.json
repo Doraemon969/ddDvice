@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "tab": "../../miniprogram_npm/lin-ui/tabs",
-    "l-icon": "../../miniprogram_npm/lin-ui/icon"
+    "l-list": "./../../miniprogram_npm/lin-ui/list",
+    "l-icon": "./../../miniprogram_npm/lin-ui/icon",
+    "l-grid": "./../../miniprogram_npm/lin-ui/grid",
+    "l-grid-item": "./../../miniprogram_npm/lin-ui/grid-item",
+    "l-card": "./../../miniprogram_npm/lin-ui/card"
   }
 }

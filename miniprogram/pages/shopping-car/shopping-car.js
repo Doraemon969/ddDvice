@@ -5,7 +5,43 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        shoppingCarInfo: [
+            {
+                goodsId: "waji-1",
+                imgUrl: "../../images/mine-pic/mine.jpg",
+                title: "挖机",
+                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
+                rent: 190.01,
+            },
+            {
+                goodsId: "waji-1",
+                imgUrl: "../../images/mine-pic/mine.jpg",
+                title: "挖机",
+                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
+                rent: 190.01,
+            },
+            {
+                goodsId: "waji-1",
+                imgUrl: "../../images/mine-pic/mine.jpg",
+                title: "挖机",
+                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
+                rent: 190.01,
+            },
+            {
+                goodsId: "waji-1",
+                imgUrl: "../../images/mine-pic/mine.jpg",
+                title: "挖机",
+                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
+                rent: 190.01,
+            },
+            {
+                goodsId: "waji-1",
+                imgUrl: "../../images/mine-pic/mine.jpg",
+                title: "挖机",
+                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
+                rent: 190.01,
+            },
+        ]
     },
 
     /**
@@ -62,5 +98,13 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    /**
+     * 复选按钮监听
+     */
+    onChangeTap: function (e) {
+        console.log(e.detail);
+        console.log(e.detail.key);
     }
 })

@@ -5,7 +5,12 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        userInfo: {
+            name: "卞瑞江",
+            imgUrl: "../../images/mine-pic/mine.jpg",
+            status: "普通会员",
+            integral: 0
+        }
     },
 
     /**
