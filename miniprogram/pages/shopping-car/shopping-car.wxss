@@ -5,7 +5,9 @@
     border-radius: 10rpx;
     box-sizing: border-box;
     padding: 16rpx 10rpx;
-    margin: 10rpx
+    margin: 10rpx;
+    padding-right: 23rpx;
+
 }
 
 .checkbox-group .slide-item .left {
@@ -20,6 +22,7 @@
     left: 50rpx;
     top: 50%;
     transform: translateY(-50%);
+    border-radius: 15rpx;
 }
 
 .checkbox-group .slide-item .left .goodsDes {
@@ -58,6 +61,7 @@
     color: #333;
     font-weight: 200;
     margin: 10rpx 0;
+    width: 439rpx;
 }
 
 .checkbox-group .slide-item .left .checkbox-item .left-con .goodsDes .left-rent {
@@ -72,6 +76,12 @@
     margin-right: 8rpx;
 }
 
+.checkbox-group .slide-item .left .checkbox-item .left-con .goodsDes .left-rent .day-rent {
+    font-size: 30rpx;
+    display: inline-block;
+    margin-left: 8rpx;
+}
+
 /* right */
 .checkbox-group .slide-item .right {
     line-height: 200rpx;
@@ -81,7 +91,7 @@
 }
 
 .checkbox-group .slide-item .right .right-text {
-    width: 115rpx;
+    width: 120rpx;
     text-align: center;
 }
 
@@ -95,9 +105,8 @@
 
 .checkbox-group .slide-item .right .right-delete {
     background-color: #FF1460;
+    margin-right: 40rpx;
 }
-
-
 
 
 
