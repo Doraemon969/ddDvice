@@ -93,6 +93,7 @@
 .checkbox-group .slide-item .right .right-text {
     width: 120rpx;
     text-align: center;
+    font-weight: 300;
 }
 
 .checkbox-group .slide-item .right .right-cllection {
