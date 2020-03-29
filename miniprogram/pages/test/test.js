@@ -1,11 +1,10 @@
-// miniprogram/pages/goodsDetial/goodsDetail.js
+// miniprogram/pages/test/test.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrl: "../../images/index-home-pic/banner1.jpg"
+
   },
 
   /**
@@ -64,27 +63,8 @@ Page({
 
   },
 
-  /**
-   * 事件
-   */
-  toIndex: function() {
-    wx.switchTab({
-      url: `../index/index`
-    })
-  },
-  toClassify: function() {
-    wx.switchTab({
-      url: `../category/category`
-    })
-  },
-  toShoppingCar: function() {
-    wx.switchTab({
-      url: `../shopping-car/shopping-car`
-    })
-  },
-  toMine: function() {
-    wx.switchTab({
-      url: `../mine/mine`
-    })
+  click:function(e) {
+    console.log("=========", e.detail.value);
+    
   }
 })

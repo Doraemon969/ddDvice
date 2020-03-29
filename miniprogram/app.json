@@ -17,7 +17,9 @@
     "pages/shopping-car/shopping-car",
     "pages/category/category",
     "pages/goodsDetial/goodsDetail",
-    "pages/oderConfirm/oderConfirm"
+    "pages/oderConfirm/oderConfirm",
+    "components/navigation/navigation",
+    "pages/test/test"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -69,6 +71,12 @@
     "l-tabs": "./miniprogram_npm/lin-ui/tabs",
     "l-tabpanel": "./miniprogram_npm/lin-ui/tabpanel",
     "l-list": "./miniprogram_npm/lin-ui/list",
-    "l-card": "./miniprogram_npm/lin-ui/card"
+    "l-card": "./miniprogram_npm/lin-ui/card",
+    "l-counter": "./miniprogram_npm/lin-ui/counter"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置用于此时的定位"
+    }
   }
 }
