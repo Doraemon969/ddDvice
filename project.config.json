@@ -2,16 +2,18 @@
 	"miniprogramRoot": "miniprogram/",
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
-		"minified": true,
+		"minified": false,
 		"newFeature": true,
 		"coverView": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
+		"nodeModules": true,
+		"autoAudits": true,
+		"showShadowRootInWxmlPanel": false,
+		"scopeDataCheck": true,
+		"uglifyFileName": true,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
@@ -20,11 +22,11 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"nodeModules": true
+		"bundle": false
 	},
 	"appid": "wx7369010583531728",
 	"projectname": "ddDvice",
-	"libVersion": "2.8.1",
+	"libVersion": "2.10.3",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -81,6 +83,28 @@
 					"id": -1,
 					"name": "pages/shopping-car/shopping-car",
 					"pathName": "pages/shopping-car/shopping-car",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/goodsDetial/goodsDetail",
+					"pathName": "pages/goodsDetial/goodsDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/oderConfirm/oderConfirm",
+					"pathName": "pages/oderConfirm/oderConfirm",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/test/test",
+					"pathName": "pages/test/test",
+					"query": "",
 					"scene": null
 				}
 			]

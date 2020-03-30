@@ -1,0 +1,4 @@
+<view class="page">
+    <!-- 时间段 -->
+    <picker mode="date" bindchange="click">111</picker>
+</view>

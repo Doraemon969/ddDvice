@@ -44,7 +44,7 @@
 <!-- 更多卡片 -->
 <l-card l-class="my-card more" type="primary" plaintext="{{true}}" title="更多功能">
     <view class="content">
-        <l-list l-class="list" title="购物车" />
+        <l-list l-class="list" title="收藏" />
         <l-list l-class="list" title="购物车" desc="查看我的购物车" right-desc="right" />
         <l-list l-class="list" title="购物车" icon="cart" is-link="{{false}}" />
         <l-list l-class="list" title="消息" icon="notification" />

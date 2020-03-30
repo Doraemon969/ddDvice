@@ -1,2 +1,68 @@
-<!--miniprogram/pages/oderConfirm/oderConfirm.wxml-->
-<text>miniprogram/pages/oderConfirm/oderConfirm.wxml</text>
+<!-- miniprogram/pages/oderConfirm/oderConfirm.wxml -->
+<view class="address shadow-box">
+    <l-icon name="address" style="display:inline-block;margin: 0 20rpx 0 10rpx;" />
+    <text class="box">{{markers[0].title}}</text>
+</view>
+<view class="useDateRange shadow-box">
+    <view class="box">
+        <view class="title">选择使用期限</view>
+        <view class="datePicker" style="display:inline-block;">
+            <picker class="data-start" mode="date" bindchange="dataStartPick" start="2021-02-02" style="display:inline-block;">
+                <l-icon class="icon" name="time" style="display:inline-block;" size="50" />
+                <text class="date">{{ dataStartPick || currentDate }}</text>
+            </picker>
+            <l-icon class="right-ward" name="backward" style="display:inline-block; margin:0 20rpx" size="50" />
+            <picker class="data-end" mode="date" bindchange="dataEndPick" style="display:inline-block;">
+                <l-icon class="icon" name="time" style="display:inline-block;" size="50" />
+                <text class="date">{{ dataEndPick || currentDate }}</text>
+            </picker>
+        </view>
+    </view>
+</view>
+<view class="deviceInfomation shadow-box">
+    <view class="box">
+        <image class="deviceImg" src="./../../images/index-home-pic/banner1.jpg"></image>
+        <view class="deviceContent">
+            <view class="top-des">{{'设备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描述'}}</view>
+            <view class="middle-rent item">
+                <text>设备租金:</text>
+                <text style="font-size:30rpx;">¥<text style="color:#f60;margin:0 10rpx;font-size:40rpx;">{{'200'}}</text>元/日</text>
+            </view>
+            <view class="bottom-num item">
+                <text>台数:</text>
+                <l-counter count="1" min="1" max="10" style="display:inline-block;"/>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="totalMoneyInfomation shadow-box">
+    <view class="rent">
+        <text class="title">租金：</text>
+        <text class="money" style="color:#f60;">¥{{0}}</text>
+    </view>
+    <view class="freight">
+        <text class="title">运费：</text>
+        <text class="money" style="color:#f60;">¥{{0}}</text>
+    </view>
+</view>
+<view class="noteInformation shadow-box">
+    <view class="box">
+        <textarea class="textarea" placeholder="如有特殊需求，请在此备注。(50字以内)" name="textarea" value="" placeholder-style="color:#888;font-size:24rpx;font-weight:300;" maxlength="50" />
+    </view>
+</view>
+
+<!-- 底部弹出信息 -->
+<view class="selected flex-box">
+    <view class="collection item1" style="background-color:#eee;width:508rpx;text-align:left;padding-left:40rpx;">
+        预估
+        <text style="color:#f60;margin-left:20rpx;">¥{{100}}</text>
+    </view>
+    <view class="addToCart item1" style="background-color:#f60;">提交订单</view>
+</view>
+<!-- 导航部分 -->
+<viwe class="navigation flex-box">
+    <view class="home item2" bindtap="toIndex">首页</view>
+    <view class="classify item2" bindtap="toClassify">分类</view>
+    <view class="shopping-car item2" bindtap="toShoppingCar">购物车</view>
+    <view class="mine item2" bindtap="toMine">我的</view>
+</viwe>
