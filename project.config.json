@@ -6,7 +6,7 @@
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
-		"minified": true,
+		"minified": false,
 		"newFeature": true,
 		"coverView": true,
 		"nodeModules": true,
@@ -20,11 +20,12 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"bundle": false
 	},
 	"appid": "wx7369010583531728",
 	"projectname": "ddDvice",
-	"libVersion": "2.8.1",
+	"libVersion": "2.10.3",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"condition": {
@@ -85,9 +86,24 @@
 					"scene": null
 				},
 				{
+					"id": 5,
+					"name": "pages/goodsDetial/goodsDetail",
+					"pathName": "pages/goodsDetial/goodsDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/oderConfirm/oderConfirm",
+					"pathName": "pages/oderConfirm/oderConfirm",
+					"query": "",
+					"scene": null
+				},
+				{
 					"id": -1,
-					"name": "pages/category/category",
-					"pathName": "pages/category/category",
+					"name": "pages/test/test",
+					"pathName": "pages/test/test",
+					"query": "",
 					"scene": null
 				}
 			]

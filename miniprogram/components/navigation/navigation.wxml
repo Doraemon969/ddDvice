@@ -1,0 +1,8 @@
+<!--miniprogram/components/navigation/navigation.wxml-->
+<text>miniprogram/components/navigation/navigation.wxml</text>
+<view class="navigation">
+    <view class="home">首页</view>
+    <view class="classification">分类</view>
+    <view class="shoppping-car">购物车</view>
+    <view class="mine">我的</view>
+</view>

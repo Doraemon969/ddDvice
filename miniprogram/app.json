@@ -1,72 +1,82 @@
 {
-    "pages": [
-        "pages/index/index",
-        "pages/userConsole/userConsole",
-        "pages/storageConsole/storageConsole",
-        "pages/databaseGuide/databaseGuide",
-        "pages/addFunction/addFunction",
-        "pages/deployFunctions/deployFunctions",
-        "pages/chooseLib/chooseLib",
-        "pages/openapi/openapi",
-        "pages/openapi/serverapi/serverapi",
-        "pages/openapi/callback/callback",
-        "pages/openapi/cloudid/cloudid",
-        "pages/im/im",
-        "pages/im/room/room",
-        "pages/mine/mine",
-        "pages/shopping-car/shopping-car",
-        "pages/category/category"
-    ],
-    "window": {
-        "backgroundColor": "#F6F6F6",
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "多多设备",
-        "navigationBarTextStyle": "black"
-    },
-    "tabBar": {
-      "color": "#f6f6f6",
-      "selectedColor": "#333",
-      "backgroundColor": "#F57C14",
-      "borderStyle": "black",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "text": "首页"
-            },
-            {
-                "pagePath": "pages/category/category",
-                "text": "分类"
-            },
-            {
-                "pagePath": "pages/shopping-car/shopping-car",
-                "text": "购物车"
-            },
-            {
-                "pagePath": "pages/mine/mine",
-                "text": "我的"
-            }
-        ]
-    },
-    "networkTimeout": {
-        "request": 10000,
-        "downloadFile": 10000
-    },
-    "debug": true,
-    "navigateToMiniProgramAppIdList": [
-        "wx7369010583531728"
-    ],
-    "sitemapLocation": "sitemap.json",
-    "style": "v2",
-    "navigationBarTitleText": "多多分类",
-    "usingComponents": {
-        "l-icon": "./miniprogram_npm/lin-ui/icon",
-        "l-grid": "./miniprogram_npm/lin-ui/grid",
-        "l-grid-item": "./miniprogram_npm/lin-ui/grid-item",
-        "l-search-bar": "./miniprogram_npm/lin-ui/search-bar",
-        "l-tabs": "./miniprogram_npm/lin-ui/tabs",
-        "l-tabpanel": "./miniprogram_npm/lin-ui/tabpanel",
-        "l-list": "./miniprogram_npm/lin-ui/list",
-        "l-card": "./miniprogram_npm/lin-ui/card"
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room",
+    "pages/mine/mine",
+    "pages/shopping-car/shopping-car",
+    "pages/category/category",
+    "pages/goodsDetial/goodsDetail",
+    "pages/oderConfirm/oderConfirm",
+    "components/navigation/navigation",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "多多设备",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#f6f6f6",
+    "selectedColor": "#333",
+    "backgroundColor": "#F57C14",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/shopping-car/shopping-car",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "navigateToMiniProgramAppIdList": [
+    "wx7369010583531728"
+  ],
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "navigationBarTitleText": "多多分类",
+  "usingComponents": {
+    "l-icon": "./miniprogram_npm/lin-ui/icon",
+    "l-grid": "./miniprogram_npm/lin-ui/grid",
+    "l-grid-item": "./miniprogram_npm/lin-ui/grid-item",
+    "l-search-bar": "./miniprogram_npm/lin-ui/search-bar",
+    "l-tabs": "./miniprogram_npm/lin-ui/tabs",
+    "l-tabpanel": "./miniprogram_npm/lin-ui/tabpanel",
+    "l-list": "./miniprogram_npm/lin-ui/list",
+    "l-card": "./miniprogram_npm/lin-ui/card",
+    "l-counter": "./miniprogram_npm/lin-ui/counter"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置用于此时的定位"
     }
+  }
 }

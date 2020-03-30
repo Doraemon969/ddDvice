@@ -3,6 +3,7 @@
   "usingComponents": {
     "l-slide-view": "./../../miniprogram_npm/lin-ui/slide-view",
     "l-checkbox-group": "./../../miniprogram_npm/lin-ui/checkbox-group",
-    "l-checkbox": "./../../miniprogram_npm/lin-ui/checkbox"
+    "l-checkbox": "./../../miniprogram_npm/lin-ui/checkbox",
+    "l-counter": "./../../miniprogram_npm/lin-ui/counter"
   }
 }

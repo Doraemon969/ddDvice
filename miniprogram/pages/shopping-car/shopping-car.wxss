@@ -65,21 +65,33 @@
 }
 
 .checkbox-group .slide-item .left .checkbox-item .left-con .goodsDes .left-rent {
-    font-size: 40rpx;
+    font-size: 35rpx;
     color: #f40;
     font-weight: 200;
 }
 
 .checkbox-group .slide-item .left .checkbox-item .left-con .goodsDes .left-rent .symbol {
-    font-size: 26rpx;
+    font-size: 22rpx;
     display: inline-block;
     margin-right: 8rpx;
 }
 
 .checkbox-group .slide-item .left .checkbox-item .left-con .goodsDes .left-rent .day-rent {
-    font-size: 30rpx;
+    font-size: 22rpx;
     display: inline-block;
     margin-left: 8rpx;
+}
+
+.checkbox-group .slide-item .left .checkbox-item .left-con .goodsDes .left-rent .counter {
+    position: absolute;
+    right: 40rpx;
+    bottom: 0;
+    display: inline-block;
+    margin-left: 20rpx;
+}
+
+.checkbox-group .slide-item .left .checkbox-item .left-con .goodsDes .left-rent .counter .counter-com {
+    width: 150rpx;
 }
 
 /* right */
@@ -93,6 +105,7 @@
 .checkbox-group .slide-item .right .right-text {
     width: 120rpx;
     text-align: center;
+    font-weight: 300;
 }
 
 .checkbox-group .slide-item .right .right-cllection {
