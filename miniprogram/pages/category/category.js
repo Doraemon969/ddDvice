@@ -5,68 +5,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        testList:[
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText1"
-            },
-            {
-                image: "../../images/category-recmmend-pic/Doraemon.jpeg",
-                text: "testText2"
-            }
-        ]
+        
     },
 
     click: function (e) {
@@ -77,7 +16,21 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        // 请求数据
+        let that = this
+        wx.request({
+            url: 'http://localhost:3000/category', //本地接口
+            success(res) {
+                that.setData({ // 此处that和this不是同一个人
+                    popular: res.data.message.popular,
+                    workHigh: res.data.message.workHigh,
+                    pneumaticTools: res.data.message.pneumaticTools,
+                    earthmovingEquipment: res.data.message.earthmovingEquipment,
+                    forkliftTruck: res.data.message.forkliftTruck,
+                    truck: res.data.message.truck,
+                })
+            }
+        })
     },
 
     /**

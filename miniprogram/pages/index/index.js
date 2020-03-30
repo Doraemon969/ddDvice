@@ -1,57 +1,67 @@
 var app = getApp()
 Page({
   data: {
-    background: [
-      '../../images/index-home-pic/banner1.jpg',
-      '../../images/index-home-pic/banner2.jpg',
-      '../../images/index-home-pic/banner3.jpg'
-    ],
+    background: [],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    indexRecommend: [{
-        imgUrl: "../../images/index-home-pic/banner1.jpg",
-        description: "设备1厂家直销，便宜实惠又好用！赶紧来租吧！",
-        price: 0.01
-      },
-      {
-        imgUrl: "../../images/index-home-pic/banner1.jpg",
-        description: "设备2",
-        price: 0.01
-      },
-      {
-        imgUrl: "../../images/index-home-pic/banner1.jpg",
-        description: "设备3",
-        price: 0.01
-      },
-      {
-        imgUrl: "../../images/index-home-pic/banner1.jpg",
-        description: "设备4",
-        price: 0.01
-      },
-      {
-        imgUrl: "../../images/index-home-pic/banner1.jpg",
-        description: "设备5",
-        price: 0.01
-      },
-      {
-        imgUrl: "../../images/index-home-pic/banner1.jpg",
-        description: "设备6",
-        price: 0.01
-      },
-      {
-        imgUrl: "../../images/index-home-pic/banner1.jpg",
-        description: "设备7",
-        price: 0.01
-      },
-      {
-        imgUrl: "../../images/index-home-pic/banner1.jpg",
-        description: "设备8",
-        price: 0.01
-      },
-    ]
+    avatarUrl: '',
+    userInfo: '',
+    indexRecommend: []
+  },
+
+  /**
+   * 生命周期函数，onLoad
+   */
+  onLoad: function () {
+    let that = this
+    // console.log("载入成功！")
+    // if (!wx.cloud) {
+    //   wx.redirectTo({
+    //     url: '../chooseLib/chooseLib',
+    //   })
+    //   return
+    // }
+
+
+    wx.request({
+      url: 'http://localhost:3000/home', //本地接口
+      success(res) {
+        that.setData({ // 此处that和this不是同一个人
+          background: res.data.message.background,
+          indexRecommend: res.data.message.indexRecommend
+        })
+      }
+    })
+
+
+    
+    // 获取用户信息
+    // wx.getSetting({
+    //   success: res => {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+    //       wx.getUserInfo({
+    //         success: res => {
+    //           this.setData({
+    //             avatarUrl: res.userInfo.avatarUrl,
+    //             userInfo: res.userInfo
+    //           })
+    //           console.log('====================================');
+    //           console.log("success");
+    //           console.log('====================================');
+    //         },
+    //         fail: res => {
+    //           console.log('====================================');
+    //           console.log("fail");
+    //           console.log('====================================');
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
   },
 
   changeIndicatorDots() {
@@ -84,7 +94,6 @@ Page({
       path: 'page/component/pages/swiper/swiper',
     }
   },
-
 })
 
 
@@ -103,32 +112,6 @@ Page({
 //     age: 24
 //   },
 
-//   onLoad: function () {
-//     console.log("载入成功！")
-//     if (!wx.cloud) {
-//       wx.redirectTo({
-//         url: '../chooseLib/chooseLib',
-//       })
-//       return
-//     }
-
-//     // 获取用户信息
-//     wx.getSetting({
-//       success: res => {
-//         if (res.authSetting['scope.userInfo']) {
-//           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-//           wx.getUserInfo({
-//             success: res => {
-//               this.setData({
-//                 avatarUrl: res.userInfo.avatarUrl,
-//                 userInfo: res.userInfo
-//               })
-//             }
-//           })
-//         }
-//       }
-//     })
-//   },
 
 //   onGetUserInfo: function (e) {
 //     if (!this.data.logged && e.detail.userInfo) {

@@ -1,26 +1,52 @@
 <!-- miniprogram/pages/category/category.wxml -->
 <l-search-bar class="search" placeholder="Hi, 搜搜你想找的 . . ." bg-color="#f3f3f3" shape="circle" clear="{{true}}" placeholder-style="color:#888" show-cancel="{{false}}" l-icon-class="color:red" />
-<l-tabs l-header-class="content-head" l-content-class="content-box" bind:linchange="changeTabs" placement="left" swipeable="{{true}}" scrollable="{{true}}" has-line="{{true}} " active-color="#009DEC">
-    <l-tabpanel tab="热度推荐" key="one" slot="one">
-        <l-grid class="category-content" l-class="grid" bind:lintap="click" show-border="{{true}}">
-            <l-grid-item wx:for="{{testList}}" wx:key="index" key="{{index}}" slot="{{index}}">
-                <image class="img" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
-                <view class="text">{{item.text}}</view>
-            </l-grid-item>
-        </l-grid>
-    </l-tabpanel>
-    <l-tabpanel tab="挖机" key="two" slot="two">
+<l-tabs style="margin-top:100rpx;" l-header-class="content-head" l-content-class="content-box" bind:linchange="changeTabs" placement="left" swipeable="{{true}}" scrollable="{{true}}" has-line="{{true}} " active-color="#009DEC">
+    <l-tabpanel tab="热度流行" key="one" slot="one">
         <l-grid class="category-content" l-class="grid">
-            <l-grid-item wx:for="{{testList}}" wx:key="index" key="{{index}}" slot="{{index}}">
+            <l-grid-item wx:for="{{popular}}" wx:key="index" key="{{index}}" slot="{{index}}">
                 <image class="img" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
                 <view class="text">{{item.text}}</view>
             </l-grid-item>
         </l-grid>
     </l-tabpanel>
-    <l-tabpanel tab="叉车" key="three" slot="three">
-        <view class="tab-content">叉车</view>
+    <l-tabpanel tab="高空作业" key="two" slot="two">
+        <l-grid class="category-content" l-class="grid">
+            <l-grid-item wx:for="{{workHigh}}" wx:key="index" key="{{index}}" slot="{{index}}">
+                <image class="img" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class="text">{{item.text}}</view>
+            </l-grid-item>
+        </l-grid>
     </l-tabpanel>
-    <l-tabpanel tab="起重机" key="four" slot="four">
-        <view class="tab-content">起重机</view>
+    <l-tabpanel tab="气动工具" key="three" slot="three">
+        <l-grid class="category-content" l-class="grid">
+            <l-grid-item wx:for="{{pneumaticTools}}" wx:key="index" key="{{index}}" slot="{{index}}">
+                <image class="img" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class="text">{{item.text}}</view>
+            </l-grid-item>
+        </l-grid>
+    </l-tabpanel>
+    <l-tabpanel tab="土方设备" key="four" slot="four">
+        <l-grid class="category-content" l-class="grid">
+            <l-grid-item wx:for="{{earthmovingEquipment}}" wx:key="index" key="{{index}}" slot="{{index}}">
+                <image class="img" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class="text">{{item.text}}</view>
+            </l-grid-item>
+        </l-grid>
+    </l-tabpanel>
+    <l-tabpanel tab="物料搬运" key="five" slot="five">
+        <l-grid class="category-content" l-class="grid">
+            <l-grid-item wx:for="{{forkliftTruck}}" wx:key="index" key="{{index}}" slot="{{index}}">
+                <image class="img" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class="text">{{item.text}}</view>
+            </l-grid-item>
+        </l-grid>
+    </l-tabpanel>
+    <l-tabpanel tab="卡车和拖车" key="six" slot="six">
+        <l-grid class="category-content" l-class="grid">
+            <l-grid-item wx:for="{{truck}}" wx:key="index" key="{{index}}" slot="{{index}}">
+                <image class="img" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                <view class="text">{{item.text}}</view>
+            </l-grid-item>
+        </l-grid>
     </l-tabpanel>
 </l-tabs>

@@ -1,6 +1,11 @@
 <!-- miniprogram/pages/mine/mine.wxml -->
 <!-- 头部卡片 -->
-<l-card l-class="my-card head" l-img-class="head-img" type="avatar" image="{{userInfo.imgUrl}}" title="{{userInfo.name}}" describe="{{userInfo.status}}">
+<l-card l-class="my-card head" l-img-class="head-img" type="avatar" image="{{}}" title="{{''}}" describe="{{userInfo.status}}">
+    <open-data type="userAvatarUrl" class="uerImg"></open-data>
+    <view class="userName">
+        <text>用户名：</text>
+        <open-data type="userNickName" style="color:#f60;font-size:35rpx;"></open-data>
+    </view>
     <l-grid rowNum="2">
         <l-grid-item l-grid-item-class="grid-item" key="one" slot="one">
             <l-icon name="customer-service" style="margin:20rpx 0" />

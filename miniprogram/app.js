@@ -1,5 +1,7 @@
 //app.js
 App({
+  onLoad: function () {
+  },
   onLaunch: function () {
     
     if (!wx.cloud) {

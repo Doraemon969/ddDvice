@@ -5,50 +5,22 @@ Page({
      * 页面的初始数据
      */
     data: {
-        shoppingCarInfo: [
-            {
-                goodsId: "waji-1",
-                imgUrl: "../../images/mine-pic/mine.jpg",
-                title: "挖机",
-                description: "挖掘机租赁哪家强？中国江机租赁哪家强？中国江机租赁哪家强？中国江苏找多多租赁！",
-                rent: 190.01,
-            },
-            {
-                goodsId: "waji-2",
-                imgUrl: "../../images/mine-pic/mine.jpg",
-                title: "挖机",
-                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
-                rent: 190.01,
-            },
-            {
-                goodsId: "waji-3",
-                imgUrl: "../../images/mine-pic/mine.jpg",
-                title: "挖机",
-                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
-                rent: 190.01,
-            },
-            {
-                goodsId: "waji-4",
-                imgUrl: "../../images/mine-pic/mine.jpg",
-                title: "挖机",
-                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
-                rent: 190.01,
-            },
-            {
-                goodsId: "waji-5",
-                imgUrl: "../../images/mine-pic/mine.jpg",
-                title: "挖机",
-                description: "挖掘机租赁哪家强？中国江苏找多多租赁！",
-                rent: 190.01,
-            },
-        ]
+        
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        let that = this;
+        wx.request({
+            url: 'http://localhost:3000/shoppingCar', //本地接口
+            success(res) {
+                that.setData({ // 此处that和this不是同一个人
+                    shoppingCarInfo: res.data.message.shoppingCarInfo
+                })
+            }
+        })
     },
 
     /**
