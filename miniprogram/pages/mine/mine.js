@@ -5,10 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
+        viewOrderViewer: false,
+        userPhone: '',
         userInfo: {
             status: "普通会员",
             integral: 0
-        }
+        },
+        user:[]
     },
 
     /**
@@ -16,30 +19,26 @@ Page({
      */
     onLoad: function (options) {
         let that = this
-        wx.request({
-            url: 'http://localhost:3000/home', //本地接口
+        wx.getStorage({
+            key: 'userPhone',
             success(res) {
-                that.setData({ // 此处that和this不是同一个人
-                    background: res.data.message.background,
-                    indexRecommend: res.data.message.indexRecommend
+                that.setData({
+                    userPhone: res.data
                 })
+                console.log('=======++++++++++++++++++=========+++++++++++++++++', );
+                console.log("userPhone", that.data.userPhone);
+                console.log('=======++++++++++++++++++=========+++++++++++++++++', );
             }
         })
-
-        wx.getUserInfo({
-            success: function (res) {
-                var userInfo = res.userInfo
-                var nickName = userInfo.nickName
-                var avatarUrl = userInfo.avatarUrl
-                var gender = userInfo.gender //性别 0：未知、1：男、2：女
-                var province = userInfo.province
-                var city = userInfo.city
-                var country = userInfo.country
-                console.log('====================================');
-                console.log(userInfo, nickName, avatarUrl, gender, province, city, country);
-                console.log('====================================');
-            }
-        })
+        // wx.request({
+        //     url: 'http://localhost:3000/', //本地接口
+        //     success(res) {
+        //         that.setData({ // 此处that和this不是同一个人
+        //             background: res.data.message.background,
+        //             indexRecommend: res.data.message.indexRecommend
+        //         })
+        //     }
+        // })
     },
 
     /**
@@ -89,5 +88,13 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+
+    viewOrder: function () {
+        let that = this
+        wx.navigateTo({
+            url: `../oderDetail/orderDetail?phone=${that.data.userPhone}`
+        })
     }
+
 })

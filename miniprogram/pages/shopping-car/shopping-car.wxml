@@ -1,27 +1,26 @@
 <!-- 购物车模块 -->
 <l-checkbox-group l-class="checkbox-group" bind:linchange="onChangeTap">
-    <l-slide-view wx:for="{{shoppingCarInfo}}" wx:key="{{shoppingCarInfo}}" class="slide-item" height="200" width="750" slide-width="400" auto-close="{{true}}">
-        <view slot="left" class="left">
-            <l-checkbox l-class="checkbox-item" key="{{item.goodsId}}" selected-color="#0096e0">
-                <view class='left-con'>
-                    <image class="img" src="{{item.imgUrl}}"></image>
-                    <view class="goodsDes">
-                        <text class='left-title'>{{item.title}}</text>
-                        <text class='left-des'>{{item.description}}</text>
-                        <view class='left-rent'>
-                            <text class="symbol">租金 ¥</text>{{item.rent}}<text class="day-rent">元/日</text>
-                            <view class="counter">
-                              <l-counter l-class="counter-com" count="1" min="1" max="10"></l-counter>
+    <l-slide-view wx:for="{{shoppingCarInfo}}" wx:key="item._id" class="slide-item" height="200" width="750" slide-width="400">
+            <view slot="left" class="left" bindtap="navidateTo" data-index="{{index}}">
+                <view class="checkbox-item">
+                    <view class='left-con'>
+                        <image class="img" src="{{item.msg.imgUrl}}"></image>
+                        <view class="goodsDes">
+                            <text class='left-title'>{{item.msg.name}}</text>
+                            <text class='left-des'>{{item.msg.des}}</text>
+                            <view class='left-rent'>
+                                <text class="symbol">租金 ¥</text>
+                                {{item.msg.price}}
+                                <text class="day-rent">元/日</text>
                             </view>
                         </view>
                     </view>
                 </view>
-            </l-checkbox>
-        </view>
-        <view slot="right" class="right">
-            <text class="right-text right-cllection">收藏</text>
-            <text class="right-text right-share">分享</text>
-            <text class="right-text right-delete">删除</text>
-        </view>
+            </view>
+            <view slot="right" class="right">
+                <text class="right-text right-cllection">收藏</text>
+                <text class="right-text right-share">分享</text>
+                <text class="right-text right-delete">删除</text>
+            </view>
     </l-slide-view>
 </l-checkbox-group>

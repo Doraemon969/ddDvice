@@ -39,7 +39,7 @@
                 <text class="iconfont icon-yiwancheng"></text>
                 <view class="text">已完成</view>
             </l-grid-item>
-            <l-grid-item wx:key="4" key="4" slot="4">
+            <l-grid-item wx:key="4" key="4" slot="4" bindtap="viewOrder">
                 <text class="iconfont icon-quanbudingdan"></text>
                 <view class="text">全部订单</view>
             </l-grid-item>

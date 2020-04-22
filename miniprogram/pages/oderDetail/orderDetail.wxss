@@ -1,0 +1,39 @@
+/* miniprogram/pages/oderDetail/orderDetail.wxss */
+.headTitle{
+    text-align: center;
+    margin: 20rpx auto;
+    color: #f40;
+}
+
+.item{
+    width: 90%;
+    height: 200rpx;
+    border-radius: 10px;
+    padding: 10rpx;
+    margin: 25rpx auto;
+    box-shadow: 0 0 15rpx #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item .leftImg {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 10px;
+}
+
+.item .rightContent {
+    width: 466rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+}
+
+.item .rightContent .itemDetailDes .title {
+    font-size: 35rpx;
+
+}
+
+.item .rightContent .itemDetailDes .detail {
+    font-size: 35rpx;
+    font-weight: 300;
+}

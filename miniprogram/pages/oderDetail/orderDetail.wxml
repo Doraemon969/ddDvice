@@ -1,0 +1,14 @@
+<!-- miniprogram/pages/oderDetail/orderDetail.wxml -->
+<view class="orderDetail">
+    <block wx:for="{{userDeviceInfo}}" wx:key="index" key="{{index}}" slot="{{index}}">
+        <view class="item">
+            <image class="leftImg" src="{{item.device.imgUrl}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            <view class="rightContent">
+                <view class="itemDetailDes"><label class="title">总计金额：</label><text class="detail">{{item.totalPrice}}元</text></view>
+                <view class="itemDetailDes"><label class="title">设备名称：</label><text class="detail">{{item.device.name}}</text></view>
+                <view class="itemDetailDes"><label class="title">设备日租价：</label><text class="detail">{{item.device.price}}元/日</text></view>
+                <view class="itemDetailDes"><label class="title">设备数量：</label><text class="detail">{{item.count}}台</text></view>
+            </view>
+        </view>
+    </block>
+</view>

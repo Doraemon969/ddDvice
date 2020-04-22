@@ -12,6 +12,12 @@
     height: 140rpx;
 }
 
+.category-content .text{
+    font-size: 30rpx;
+    font-weight: 300;
+    color: #333;
+}
+
 .content-head {
     height: 500rpx !important;
 }

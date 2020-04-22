@@ -5,9 +5,9 @@
 </view>
 <view class="useDateRange shadow-box">
     <view class="box">
-        <view class="title">选择使用期限</view>
+        <view class="title">选择使用期限: {{num||0}}天</view>
         <view class="datePicker" style="display:inline-block;">
-            <picker class="data-start" mode="date" bindchange="dataStartPick" start="2021-02-02" style="display:inline-block;">
+            <picker class="data-start" mode="date" bindchange="dataStartPick" start="" style="display:inline-block;">
                 <l-icon class="icon" name="time" style="display:inline-block;" size="50" />
                 <text class="date">{{ dataStartPick || currentDate }}</text>
             </picker>
@@ -19,18 +19,18 @@
         </view>
     </view>
 </view>
-<view class="deviceInfomation shadow-box">
+<view class="deviceInfomation shadow-box" bindtap="num_data">
     <view class="box">
-        <image class="deviceImg" src="./../../images/index-home-pic/banner1.jpg"></image>
+        <image class="deviceImg" src="{{msg.imgUrl}}"></image>
         <view class="deviceContent">
-            <view class="top-des">{{'设备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描备描述'}}</view>
+            <view class="top-des">{{msg.name}}: {{msg.des}}</view>
             <view class="middle-rent item">
                 <text>设备租金:</text>
-                <text style="font-size:30rpx;">¥<text style="color:#f60;margin:0 10rpx;font-size:40rpx;">{{'200'}}</text>元/日</text>
+                <text style="font-size:30rpx;">¥<text style="color:#f60;margin:0 10rpx;font-size:40rpx;">{{msg.price}}</text>元/日</text>
             </view>
             <view class="bottom-num item">
                 <text>台数:</text>
-                <l-counter count="1" min="1" max="10" style="display:inline-block;"/>
+                <l-counter count="1" min="1" max="10" style="display:inline-block;" bind:lintap="numCounter"/>
             </view>
         </view>
     </view>
@@ -38,27 +38,27 @@
 <view class="totalMoneyInfomation shadow-box">
     <view class="rent">
         <text class="title">租金：</text>
-        <text class="money" style="color:#f60;">¥{{0}}</text>
+        <text class="money" style="color:#f60;">¥{{msg.price}}</text>
     </view>
     <view class="freight">
         <text class="title">运费：</text>
-        <text class="money" style="color:#f60;">¥{{0}}</text>
+        <text class="money" style="color:#f60;">¥{{freight}}</text>
     </view>
 </view>
 <view class="noteInformation shadow-box">
     <view class="box">
-        <textarea class="textarea" placeholder="如有特殊需求，请在此备注。(50字以内)" name="textarea" value="" placeholder-style="color:#888;font-size:24rpx;font-weight:300;" maxlength="50" />
+        <textarea bindinput='getText' class="textarea" placeholder="如有特殊需求，请在此备注。(50字以内)" name="textarea" value="{{note}}" placeholder-style="color:#888;font-size:24rpx;font-weight:300;" maxlength="50"/>
     </view>
 </view>
-
 <!-- 底部弹出信息 -->
 <view class="selected flex-box">
     <view class="collection item1" style="background-color:#eee;width:508rpx;text-align:left;padding-left:40rpx;">
         预估
-        <text style="color:#f60;margin-left:20rpx;">¥{{100}}</text>
+        <text style="color:#f60;margin-left:20rpx;">¥{{total || 0}}</text>
     </view>
-    <view class="addToCart item1" style="background-color:#f60;">提交订单</view>
+    <view class="addToCart item1" style="background-color:#f60;"></view>
 </view>
+<view class="submmit" bindtap="submmit">提交订单</view>
 <!-- 导航部分 -->
 <viwe class="navigation flex-box">
     <view class="home item2" bindtap="toIndex">首页</view>

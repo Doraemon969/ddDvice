@@ -5,12 +5,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        
+        category: []
     },
 
     click: function (e) {
         console.log(e.detail);
+        console.log(this.data.category);
     },
+    
 
     /**
      * 生命周期函数--监听页面加载
@@ -19,18 +21,17 @@ Page({
         // 请求数据
         let that = this
         wx.request({
-            url: 'http://localhost:3000/category', //本地接口
+            url: 'http://localhost:3000/deviceInit', //本地接口
             success(res) {
                 that.setData({ // 此处that和this不是同一个人
-                    popular: res.data.message.popular,
-                    workHigh: res.data.message.workHigh,
-                    pneumaticTools: res.data.message.pneumaticTools,
-                    earthmovingEquipment: res.data.message.earthmovingEquipment,
-                    forkliftTruck: res.data.message.forkliftTruck,
-                    truck: res.data.message.truck,
+                    category: res.data.message
                 })
             }
         })
+    },
+
+    methods: {
+        
     },
 
     /**
@@ -44,7 +45,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        console.log("this.category", this.data.category);
     },
 
     /**
@@ -80,5 +81,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    }
+    },
 })

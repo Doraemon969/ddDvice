@@ -14,17 +14,48 @@ Page({
    * 页面的初始数据
    */
   data: {
-    latitude: '',
-    longitude: '',
+    freight: '128',
+    location: {},
     dataStartPick: '',
     dataEndPick: '',
-    currentDate: ''
+    dayRange: '',
+    currentDate: '',
+    count: '1',
+    note: '',
+    num: '',
+    total: '',
+    userPhone: '',
+    msg: {}
+  },
+
+  computed: {
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this
+    wx.getStorage({
+      key: 'userPhone',
+      success(res) {
+        that.setData({
+          userPhone: res.data
+        })
+        console.log('=======++++++++++++++++++=========+++++++++++++++++', );
+        console.log("userPhone", that.data.userPhone);
+        console.log('=======++++++++++++++++++=========+++++++++++++++++', );
+      }
+    })
+    this.setData({
+      msg: options // options是一个对象
+    })
+    setInterval(() => {
+      this.num_data()
+      this.setData({
+        total: this.getTotal()
+      })
+    }, 500);
     /**
      * 自动获取当前位置，并逆解析为地名
      */
@@ -43,7 +74,8 @@ Page({
           poi: {
             latitude: res.location.lat,
             longitude: res.location.lng
-          }
+          },
+          location: res.location
         });
       },
       fail: function (error) {
@@ -189,7 +221,115 @@ Page({
     this.setData({
       dataEndPick: e.detail.value
     })
+  },
+
+  /**
+   * 日期范围
+   */
+  num_data: function (e) {
+      let that = this;
+      var start = that.data.dataStartPick || this.data.currentDate;
+      var end = that.data.dataEndPick || this.data.currentDate;
+      var start_date = new Date(start.replace(/-/g, "/"));
+      var end_date = new Date(end.replace(/-/g, "/"));
+      var days = end_date.getTime() - start_date.getTime();
+      var day = parseInt(days / (1000 * 60 * 60 * 24));
+      if (day > 0) {
+        that.setData({
+          num: day
+        })
+      } 
+  },
+
+  /**
+   * 计数器数量获取
+   */
+  numCounter: function (e) {
+    this.setData({
+      count: e.detail.count
+    })
+  },
+
+  /**
+   * 设置备注信息
+   */
+  getText: function(e){
+    this.setData({
+      note: e.detail.value
+    })
+  },
+  
+  /**
+   * 设置用户手机号
+   */
+  getPhone: function(e){
+    this.setData({
+      userPhone: e.detail.value
+    })
+  },
+
+  /**
+   * 提交信息
+   */
+  submmit: function(){
+    // 1.微信支付，成功
+    let flag = true
+    if (flag) {
+      // 2.向后端发送数据
+      let tmp = {
+       totalPrice: this.getTotal(),
+       note: this.data.note,
+       userPhone: this.data.userPhone,
+       timeStart: this.data.dataStartPick,
+       timeEnd: this.data.dataEndPick,
+       timeRange: this.data.dayRange,
+       local: this.data.location,
+       device: this.data.msg,
+       count: this.data.count,
+      }
+      wx.request({
+        url: 'http://localhost:3000/addUserInfo', //仅为示例，并非真实的接口地址
+        method: 'POST',
+        data: tmp,
+        header: {
+          'content-type': 'application/json' // 默认值
+        },
+        success(res) {
+          console.log("success", res.data)
+          // 3.数据插入成功，弹出提示页面跳转到我的
+          wx.showToast({
+            title: '提交成功！',
+            icon: 'success',
+            duration: 1000
+          })
+          setTimeout(() => {
+            wx.switchTab({
+              url: `../mine/mine`
+            })
+          }, 1500);
+        },
+        fail(res) {
+          console.log("fail")
+          wx.showToast({
+            title: '提交失败！',
+            duration: 1000
+          })
+        }
+      })
+    }
+  },
+
+  /**
+   * 计算总金额
+   */
+  getTotal: function(){
+    let price = parseFloat(this.data.msg.price); // 单价
+    let count = parseFloat(this.data.count); // 数量
+    let num = this.data.num || 0; // 天数
+    let freight = parseFloat(this.data.freight); // 运费
+    let total = (price * count * num) + (freight) // 总价计算
+    return total.toFixed(2) // 保留两位小数
   }
 
-
 })
+

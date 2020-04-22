@@ -5,7 +5,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        
+        userPhone: '',
+        shoppingCarInfo: []
     },
 
     /**
@@ -13,28 +14,48 @@ Page({
      */
     onLoad: function (options) {
         let that = this;
-        wx.request({
-            url: 'http://localhost:3000/shoppingCar', //本地接口
+        wx.getStorage({
+            key: 'userPhone',
             success(res) {
-                that.setData({ // 此处that和this不是同一个人
-                    shoppingCarInfo: res.data.message.shoppingCarInfo
+                that.setData({
+                    userPhone: res.data
                 })
+                console.log('+++++success+++++成功++s+++success+++++', that.data.userPhone);
+            },
+            fail() {
+                console.log('+++++error+++++失败+++++error+++++');
             }
         })
+        setTimeout(() => {
+            let userPhone = that.data.userPhone
+            wx.request({
+                url: 'http://localhost:3000/getShoppingCarInfo', //本地接口
+                method: 'POST',
+                data: {
+                    userPhone: userPhone,
+                },
+                header: {
+                    'content-type': 'application/json' // 默认值
+                },
+                success(res) {
+                    that.setData({ // 此处that和this不是同一个人
+                        shoppingCarInfo: res.data.data
+                    })
+                }
+            })
+        }, 1000);
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
-
-    },
+    onReady: function () {},
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        
     },
 
     /**
@@ -78,5 +99,16 @@ Page({
     onChangeTap: function (e) {
         console.log(e.detail);
         console.log(e.detail.key);
+    },
+
+    /**
+     * 路由跳转
+     */
+    navidateTo: function (e) {
+        let index = e.currentTarget.dataset.index
+        let tmpInfo = this.data.shoppingCarInfo[index].msg
+        wx.navigateTo({
+            url: `../oderConfirm/oderConfirm?name=${tmpInfo.name}&des=${tmpInfo.des}&price=${tmpInfo.price}&imgUrl=${tmpInfo.imgUrl}`
+        })
     }
 })
