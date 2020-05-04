@@ -12,8 +12,24 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      userPhone: options.phone
+    })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     let that = this
-    let userPhone = options.phone
+    let userPhone = that.data.userPhone
     wx.request({
       url: 'http://localhost:3000/minePhone', //仅为示例，并非真实的接口地址
       method: 'POST',
@@ -29,27 +45,13 @@ Page({
         })
         // 3.页面跳转
         console.log('================', );
-        console.log(res.data.message);
+        console.log("res.data.message", res.data.message);
         console.log('================', );
       },
       fail(res) {
         console.log("fail")
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
   },
 
   /**
